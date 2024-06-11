@@ -19,8 +19,8 @@ HTMLPage html; //객체 생성
 #define WIFI_MAX_SIZE 10
 
 //각자의 보드 WIFI 설정
-const char* ap_ssid = "next1"; //표출되는 이름
-const char* ap_password = "next18850"; //비번
+const char* ap_ssid = "ditto";        // 표출되는 이름
+const char* ap_password = "12345678"; // 비번
 
 //WEB 서버 클래스
 ESP8266WebServer server(80); //server라는 객체 생성
