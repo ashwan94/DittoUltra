@@ -41,6 +41,7 @@ void reconnect() {
       pubClient.publish("DittoPub", "It's Ditto time!");
       // ... and resubscribe
       pubClient.subscribe("DittoSub");
+      
     } else {
       Serial.print("failed, rc=");
       Serial.print(pubClient.state());
@@ -53,9 +54,6 @@ void reconnect() {
 
 //여기서 메세지 쏘기
 void publish(String topicStr, String payloadStr) {
-  // Serial.println("MQTT 로 넘어옴");
-  // Serial.println(topicStr);
-  // Serial.println(payloadStr);
 
   int topicLength = topicStr.length() + 1;
   int payloadLength = payloadStr.length() + 1;
@@ -65,10 +63,6 @@ void publish(String topicStr, String payloadStr) {
 
   topicStr.toCharArray(topic, topicLength);
   payloadStr.toCharArray(payload, payloadLength);
-
-  // Serial.println("뭐가 변환된 값일까?");
-  // Serial.println(topic);
-  // Serial.println(payload);
 
   pubClient.loop();                   //서버한테 나 드간다?라고 말하기
   pubClient.publish(topic, payload);  //서버에 쏘기
@@ -90,7 +84,7 @@ void receivedMQTTCallback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-  // TO-DO
+
 }
 
 
