@@ -1,3 +1,4 @@
+#include "HardwareSerial.h"
 bool goOnUltraSonic();
 
 // 착석하면 true, 아니면 false 를 return
@@ -19,7 +20,8 @@ bool goOnUltraSonic() {
   // Serial.println(" cm");   // 측정된 물체로부터 거리값(cm값)
 
   // 거리가 10cm 이하일 때 LED를 켜고, 그 외에는 끄기
-  if (distance <= 10) {
+  Serial.println(distance);
+  if (distance <= 70) {
     // 착석했을 경우
     digitalWrite(LED, HIGH);
     seatStatus = true;

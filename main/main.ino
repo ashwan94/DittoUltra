@@ -145,7 +145,7 @@ void sensing() {
                             + "\", \"seatStatus\" : \"" + seatStatus
                             + "\"}");
       // MQTT 경로 설정 -> IoT/Sensor
-      String rootTopic = "/IoT/Sensor/Ditto" + sensorID;
+      String rootTopic = "/IoT/Sensor/" + sensorID;
 
       publish(rootTopic, data);
     }
